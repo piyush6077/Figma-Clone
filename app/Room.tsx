@@ -7,9 +7,10 @@ import {
   ClientSideSuspense,
 } from "@liveblocks/react/suspense";
 
+
 export function Room({ children }: { children: ReactNode }) {
   return (
-    <LiveblocksProvider publicApiKey={"pk_dev_iB0_FL4Fjldkann00LTVkf50rpclYusDA9EWBRVDwl7-42QrocSmt2OS_90X_Bm8"}>
+    <LiveblocksProvider publicApiKey={process.env.NEXT_PUBLIC_LIVEBLOCKS_PUBLIC_KEY!}>
       <RoomProvider id="my-room">
         <ClientSideSuspense fallback={<div>Loading…</div>}>
           {children}
